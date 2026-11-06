@@ -1,0 +1,21 @@
+scan:
+  max_file_bytes: 1048576
+  exclude:
+    - node_modules
+    - target
+    - dist
+dast:
+  max_requests: 12
+  max_concurrency: 3
+  timeout_ms: 2000
+  allow_hosts:
+    - localhost
+    - 127.0.0.1
+    - '[::1]'
+governance:
+  allowed_paths:
+    - src
+    - tests
+  blocked_commands:
+    - 'rm -rf'
+    - 'git push --force'
